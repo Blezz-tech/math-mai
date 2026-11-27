@@ -80,8 +80,11 @@ $ forall E > 0, exists delta > 0: quad forall x in E, quad 0 < abs(x - a) < delt
   - №477: $lim_(x -> 0) (cos x - cos 3x)/x^2 = lim_(x -> 0) (2 sin 2x sin x)/x^2 = 4$.
   - Также помни: $lim_(x -> 0) sin(1/x)$ не существует, но $lim_(x -> 0) x sin(1/x) = 0$ (б.м. $times$ ограниченная).
 - *Д №493, №500 (§5, разложение и сопряжённое):*
-  - №493: $lim_(x -> pi/6) (2 sin^2 x + sin x - 1)/(2 sin^2 x - 3 sin x + 1) = lim_(x -> pi/6) ((2 sin x - 1)(sin x + 1))/((2 sin x - 1)(sin x - 1)) = -3$.
-  - №500: $lim_(x -> 0) x^2 / (sqrt(1 + x sin x) - sqrt(cos x)) = lim_(x -> 0) (x^2 (sqrt(1 + x sin x) + sqrt(cos x)))/(x sin x + 1 - cos x) = 2 / (1 + 1/2) = 4/3$.
+  - №493:
+    $ lim_(x -> pi/6) (2 sin^2 x + sin x - 1)/(2 sin^2 x - 3 sin x + 1) = lim_(x -> pi/6) ((2 sin x - 1)(sin x + 1))/((2 sin x - 1)(sin x - 1)) = -3 $
+  - №500:
+    $ lim_(x -> 0) x^2 / (sqrt(1 + x sin x) - sqrt(cos x)) = lim_(x -> 0) (x^2 (sqrt(1 + x sin x) + sqrt(cos x)))/(x sin x + 1 - cos x) $
+    $ = 2 / (1 + 1/2) = 4/3 $
 
 #trap([Считают $sin(1/x)$ бесконечно малой при $x -> 0$. Это неверно: $sin(1/x)$ лишь *ограничена* ($abs(sin(1/x)) <= 1$), но при $x_n = 1/(pi/2 + 2 pi n)$ равна $1$, а при $x'_n = 1/(2 pi n)$ равна $0$, поэтому предела нет.])
 
