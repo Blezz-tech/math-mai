@@ -1,0 +1,33 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - ".github/workflows/build.yml"
+  pull_request:
+    paths:
+      - "src/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Compile study guide PDF
+        run: |
+          mkdir -p dist
+          typst compile src/main.typ "dist/Математический анализ I семестр — Билеты и план подготовки.pdf"
+
+      - name: Upload compiled PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: matan-sem1-study-guide-pdf
+          path: "dist/Математический анализ I семестр — Билеты и план подготовки.pdf"
